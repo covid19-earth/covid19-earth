@@ -1,0 +1,33 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><meta property="og:title" content="COVID-19 Dashboard"><meta property="article:tag" content="Coronavirus"><meta property="article:tag" content="Coronavirus Update"><meta property="article:tag" content="Coronavirus"><meta property="article:tag" content="Coronavirus live"><meta property="article:tag" content="coronavirus Total Cases"><meta property="article:tag" content="coronavirus Stats"><meta property="article:tag" content="COVID-19"><meta property="article:tag" content="Coronavirus New Cases"><meta name="keywords" content="COVID-19, Coronavirus"><meta property="og:description" content="Useful data visualisation regarding the COVID-19 virus outbreak "><meta name="description" content="Useful data visualisation regarding the COVID-19 virus outbreak "><meta name="robots" content="index, follow"><meta property="og:type" content="website"><meta property="og:image" content="https://www.covid19.earth/COVID19.png"><!--[if IE]><link rel="icon" href="/favicon.jpg"><![endif]--><script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js?v=13580"></script><script src="datafileConfig.js?v=63249"></script><script async src="https://www.googletagmanager.com/gtag/js?id=G-CY2M7JR2ZR"></script><script>window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-CY2M7JR2ZR');</script><title>web</title><script>// get the country.
+        async function get_country_from_AlphaSoftHub() {
+            let response = await fetch("https://alphasofthub.com/ipinfo.php")
+            let content = await response.json()
+            localStorage.setItem("country", content.country_code.toString().toLocaleLowerCase())
+            location.reload()
+        }
+
+        if (localStorage.getItem("country") === null) {
+            localStorage.setItem("country", 'pk')
+            location.reload()
+        }
+
+        function importJs(file) {
+            let element = document.createElement("script");
+            element.setAttribute("type", "text/javascript");
+            //element.setAttribute("src", "data/"+ file + ".js?v=" + new Date().getTime())
+            element.setAttribute("src", "data/" + file + ".js")
+            document.getElementsByTagName("head")[0].appendChild(element);
+        }
+
+        var country = localStorage.getItem("country") || "pk"
+
+        // if the given country is not in our list, then default country will be Pakistan.
+        if (!datafileConfig.hasOwnProperty(country)) country = "pk"
+        for (let index in datafileConfig[country]) {
+            let file = datafileConfig[country][index]
+            importJs(file)
+        }</script><script src="https://code.highcharts.com/maps/highmaps.js?v=31237"></script><script src="https://code.highcharts.com/maps/modules/exporting.js?v=94906"></script><script src="https://code.highcharts.com/mapdata/countries/pk/pk-all.js?v=66665"></script><link href="/js/chunk-000ada0f.1e7d59f3.js" rel="prefetch"><link href="/js/chunk-212c9f10.bd2c2005.js" rel="prefetch"><link href="/js/chunk-2d0ab81e.b92b9bac.js" rel="prefetch"><link href="/js/chunk-2d0cb686.7144be59.js" rel="prefetch"><link href="/js/chunk-2d0ce84b.95e475c2.js" rel="prefetch"><link href="/js/chunk-2d0daf2f.6d4c180d.js" rel="prefetch"><link href="/js/chunk-2d0e95df.5178878d.js" rel="prefetch"><link href="/js/chunk-5eb00885.17ff370b.js" rel="prefetch"><link href="/js/chunk-d20853fc.c4958c7b.js" rel="prefetch"><link href="/js/chunk-ee03df1a.1a7e6884.js" rel="prefetch"><link href="/css/app.43c96736.css" rel="preload" as="style"><link href="/css/chunk-vendors.0f3f03ad.css" rel="preload" as="style"><link href="/js/app.d7a669ca.js" rel="preload" as="script"><link href="/js/chunk-vendors.5e9c0a50.js" rel="preload" as="script"><link href="/css/chunk-vendors.0f3f03ad.css" rel="stylesheet"><link href="/css/app.43c96736.css" rel="stylesheet"><link rel="icon" type="image/png" sizes="32x32" href="/img/icons/favicon-32x32.png"><link rel="icon" type="image/png" sizes="16x16" href="/img/icons/favicon-16x16.png"><link rel="manifest" href="/manifest.json"><meta name="theme-color" content="#4DBA87"><meta name="apple-mobile-web-app-capable" content="no"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="apple-mobile-web-app-title" content="web"><link rel="apple-touch-icon" href="/img/icons/apple-touch-icon-152x152.png"><link rel="mask-icon" href="/img/icons/safari-pinned-tab.svg" color="#4DBA87"><meta name="msapplication-TileImage" content="/img/icons/msapplication-icon-144x144.png"><meta name="msapplication-TileColor" content="#000000"></head><body><noscript><strong>We're sorry but web doesn't work properly without JavaScript enabled. Please enable it to continue.</strong></noscript><div id="app"></div><script src="/js/chunk-vendors.5e9c0a50.js"></script><script src="/js/app.d7a669ca.js"></script></body></html>
